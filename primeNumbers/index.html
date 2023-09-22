@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+    Prime numbers to 100<br/>
+
+    <script>
+        let solution = 0;
+        // let limit = Number(prompt("Give me limit of prime numbers"));
+        let limit = 100;
+        
+        function SolutionOne() {
+          for (let x = 2; x < limit; x++) {
+            for (y = 2; (x % y) !== 0 && y <= x / 2 + 1; y++) { }
+            if (Math.ceil(x / 2 + 1) === y) document.write(`${x}<br/>`);
+          }
+        }
+    
+    
+    
+        function SolutionTwo() {
+          function isPrime(x) {
+            if (x < 2) return false;
+            for (let i = 2; i <= x / 2; i++)
+              if (x % i === 0)
+                return false;
+    
+            return true;
+          }
+          for (let i = 0; i < limit; i++)
+            if (isPrime(i)) document.write(`${i}<br/>`);
+        }
+    
+        switch (solution) {
+          case 0:
+            SolutionOne();
+            break;
+          case 1:
+            SolutionTwo();
+            break;
+        }
+      </script>
+</body>
+
+</html>
